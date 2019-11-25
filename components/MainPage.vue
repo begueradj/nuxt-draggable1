@@ -4,42 +4,38 @@
       <v-flex d-flex xs3>
         <v-card tile>
           <v-card-text>
-    
             <v-list>
-              <draggable 
-                v-model="relsFiltered" 
+              <draggable
+                v-model="relsFiltered"
+                @start="drag = true"
+                @end="drag = false"
                 element="div"
-                @start="drag = true" 
-                @end="drag = false">
-                <div 
+              >
+                <div
                   v-for="(el, index) in relsFiltered"
                   @click="onSelect(el)"
                   :key="el.id"
                 >
-                  <v-divider v-if="index === 0"/>
+                  <v-divider v-if="index === 0" />
 
-                  <v-list-tile 
-                    :key="el.id" 
+                  <v-list-tile
+                    :key="el.id"
                     ripple
-                    
-                    >
+                  >
                     <v-list-tile-content>
                       <v-list-tile-title>
-                        {{index}}. {{el.name}}
+                        {{ index }}. {{ el.name }}
                       </v-list-tile-title>
                     </v-list-tile-content>
                   </v-list-tile>
 
-                  <v-divider/>
+                  <v-divider />
                 </div>
               </draggable>
             </v-list>
-    
           </v-card-text>
 
-          <v-card-text>
-          
-          </v-card-text>
+          <v-card-text />
         </v-card>
       </v-flex>
 
@@ -50,43 +46,41 @@
         </v-card>
       </v-flex>
     </v-layout>
-    
-    </div>
+  </div>
 </template>
 <script>
-import draggable from "vuedraggable";
+import draggable from 'vuedraggable'
 
 export default {
-  name: "HelloWorld",
-  data() {
+  name: 'HelloWorld',
+  components: { draggable },
+  data () {
     return {
       rels: [
-        { id: 0, name: "one" },
-        { id: 1, name: "two" },
-        { id: 2, name: "three" },
-        { id: 3, name: "four" }
+        { id: 0, name: 'one' },
+        { id: 1, name: 'two' },
+        { id: 2, name: 'three' },
+        { id: 3, name: 'four' }
       ]
-    };
+    }
   },
   computed: {
     relsFiltered: {
-      get() {
-        return this.rels;
+      get () {
+        return this.rels
       },
-      set(data) {
-        this.rels = data;
+      set (data) {
+        this.rels = data
       }
     }
   },
-  components: { draggable },
   methods: {
-    onSelect() {}
+    onSelect () {}
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
 </style>
- 

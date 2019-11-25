@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <HelloWorld/>
+    <main-page />
   </div>
 </template>
 
 <script>
-import MainPage from "./components/MainPage.vue";
+import MainPage from '@/components/MainPage.vue'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     MainPage
   }
-};
+}
 </script>
 
 <style>
@@ -25,4 +25,3 @@ export default {
   margin-top: 60px;
 }
 </style>
-
