@@ -18,16 +18,16 @@
                 >
                   <v-divider v-if="index === 0" />
 
-                  <v-list-tile
+                  <v-list-item
                     :key="el.id"
                     ripple
                   >
-                    <v-list-tile-content>
-                      <v-list-tile-title>
+                    <v-list-item-content>
+                      <v-list-item-title>
                         {{ index }}. {{ el.name }}
-                      </v-list-tile-title>
-                    </v-list-tile-content>
-                  </v-list-tile>
+                      </v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
 
                   <v-divider />
                 </div>
